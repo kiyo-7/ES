@@ -6,9 +6,9 @@ export default function ResultsScreen({ score, totalQuestions, answers, user, on
   const formalityScore = formalityQs.filter(a => a.formalityCorrect).length
 
   const grade =
-    pct >= 90 ? { emoji: '🏆', text: '¡Excelente!' } :
-    pct >= 70 ? { emoji: '🌟', text: '¡Muy bien!' } :
-    pct >= 50 ? { emoji: '👍', text: '¡Bien!' } :
+    pct >= 90 ? { emoji: '🏆', text: 'GOOD GIRLL¡Excelente!' } :
+    pct >= 70 ? { emoji: '🌟', text: 'GOOD GIRL ¡Muy bien!' } :
+    pct >= 50 ? { emoji: '👍', text: 'GOOD GIRL ¡Bien!' } :
     pct >= 30 ? { emoji: '💪', text: 'Keep going!' } :
     { emoji: '📚', text: 'Time to study!' }
 
