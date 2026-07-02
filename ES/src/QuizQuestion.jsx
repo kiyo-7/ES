@@ -189,7 +189,7 @@ export default function QuizQuestion({ question, totalQuestions, currentIndex, s
             }`}>
               {answerCorrect
                 ? '✅ Correcto !'
-                : `❌ Oops ! La bonne réponse était : ${question.french}`
+                : `❌ YAAA HAYCHAAAAAA ! La réponse HYA ${question.french}`
               }
             </div>
 
