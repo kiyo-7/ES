@@ -87,8 +87,8 @@ export default function QuizQuestion({ question, totalQuestions, currentIndex, s
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 ${
       isPrince
-        ? 'bg-gradient-to-br from-red-50 via-amber-50 to-orange-100'
-        : 'bg-gradient-to-br from-purple-50 via-fuchsia-50 to-cyan-100'
+        ? 'bg-linear-to-br from-red-50 via-amber-50 to-orange-100'
+        : 'bg-linear-to-br from-purple-50 via-fuchsia-50 to-cyan-100'
     }`}>
       <div className="w-full max-w-lg mb-4">
         <div className="flex justify-between items-center mb-2">

@@ -8,7 +8,7 @@ export default function ResultsScreen({ score, totalQuestions, answers, user, on
   const grade =
     pct >= 90 ? { emoji: '🏆', text: 'GOOD GIRLL¡Excelente!' } :
     pct >= 70 ? { emoji: '🌟', text: 'GOOD GIRL ¡Muy bien!' } :
-    pct >= 50 ? { emoji: '👍', text: 'GOOD GIRL ¡Bien!' } :
+    pct >= 50 ? { emoji: '👍', text: '¡Bien!' } :
     pct >= 30 ? { emoji: '💪', text: 'Keep going!' } :
     { emoji: '📚', text: 'Time to study!' }
 
@@ -17,8 +17,8 @@ export default function ResultsScreen({ score, totalQuestions, answers, user, on
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center p-6 ${
       isPrince
-        ? 'bg-gradient-to-br from-red-50 via-amber-50 to-orange-100'
-        : 'bg-gradient-to-br from-purple-50 via-fuchsia-50 to-cyan-100'
+        ? 'bg-linear-to-br from-red-50 via-amber-50 to-orange-100'
+        : 'bg-linear-to-br from-purple-50 via-fuchsia-50 to-cyan-100'
     }`}>
       <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 max-w-md w-full text-center">
         <div className="text-6xl mb-3">{grade.emoji}</div>

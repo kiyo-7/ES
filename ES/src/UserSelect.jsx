@@ -25,7 +25,7 @@ function HeroIcon() {
 
 export default function UserSelect({ onSelect }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-amber-50 via-orange-50 to-yellow-50 flex flex-col items-center justify-center p-6">
       <div className="text-center mb-10">
         <h1 className="text-5xl sm:text-6xl font-bold text-gray-800 mb-2">🇪🇸</h1>
         <h2 className="text-2xl font-bold text-gray-800 mb-1">Spanish Quiz</h2>
@@ -35,7 +35,7 @@ export default function UserSelect({ onSelect }) {
       <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl">
         <button
           onClick={() => onSelect('prince')}
-          className="flex-1 bg-gradient-to-b from-red-800 to-red-950 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border-2 border-red-600 group cursor-pointer"
+          className="flex-1 bg-linear-to-b from-red-800 to-red-950 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border-2 border-red-600 group cursor-pointer"
         >
           <div className="text-amber-400 mb-4">
             <CrownIcon />
@@ -47,7 +47,7 @@ export default function UserSelect({ onSelect }) {
 
         <button
           onClick={() => onSelect('main-character')}
-          className="flex-1 bg-gradient-to-b from-purple-800 to-purple-950 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border-2 border-purple-600 group cursor-pointer"
+          className="flex-1 bg-linear-to-b from-purple-800 to-purple-950 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 border-2 border-purple-600 group cursor-pointer"
         >
           <div className="text-cyan-400 mb-4">
             <HeroIcon />

@@ -1,0 +1,262 @@
+🇪🇸 **Couleurs (utilisées comme noms)**
+
+• **el rojo / un rojo** → le rouge / un rouge
+• **el azul / un azul** → le bleu / un bleu
+• **el verde / un vert** → le vert / un vert
+• **el amarillo / un amarillo** → le jaune / un jaune
+• **el negro / un negro** → le noir / un noir
+• **el blanco / un blanco** → le blanc / un blanc
+• **el gris / un gris** → le gris / un gris
+• **el marrón / un marrón** → le marron / un marron
+• **el naranja / un naranja** → l'orange / un orange
+• **el rosa / un rosa** → le rose / un rose
+• **el morado / un morado** → le violet / un violet
+• **el violeta / un violeta** → le violet / un violet
+• **el celeste / un celeste** → le bleu ciel / un bleu ciel
+• **el turquesa / un turquesa** → le turquoise / un turquoise
+• **el beige / un beige** → le beige / un beige
+• **el dorado / un dorado** → le doré / un doré
+• **el plateado / un plateado** → l'argenté / un argenté
+• **el granate / un granate** → le bordeaux / un bordeaux
+
+🍎 **Fruits**
+
+• **la manzana / una manzana** → la pomme / une pomme
+• **el plátano / un plátano** → la banane / une banane
+• **la naranja / una naranja** → l'orange / une orange
+• **la pera / una pera** → la poire / une poire
+• **la uva / una uva** → le raisin / un raisin
+• **la fresa / una fresa** → la fraise / une fraise
+• **la sandía / una sandía** → la pastèque / une pastèque
+• **el melón / un melón** → le melon / un melon
+• **la piña / una piña** → l'ananas / un ananas
+• **el mango / un mango** → la mangue / une mangue
+• **el limón / un limón** → le citron / un citron
+• **la cereza / una cereza** → la cerise / une cerise
+
+🐾 **Animaux**
+
+• **el perro / un perro** → le chien / un chien
+• **el gato / un gato** → le chat / un chat
+• **el caballo / un caballo** → le cheval / un cheval
+• **la vaca / una vaca** → la vache / une vache
+• **la oveja / una oveja** → le mouton / un mouton
+• **el pájaro / un pájaro** → l'oiseau / un oiseau
+• **el pez / un pez** → le poisson / un poisson
+• **el conejo / un conejo** → le lapin / un lapin
+• **el león / un león** → le lion / un lion
+• **el tigre / un tigre** → le tigre / un tigre
+
+🏠 **Objets et lieux indispensables**
+
+• **la casa / una casa** → la maison / une maison
+• **la habitación / una habitación** → la chambre / une chambre
+• **la cocina / una cocina** → la cuisine / une cuisine
+• **el baño / un baño** → la salle de bain / une salle de bain
+• **la puerta / una puerta** → la porte / une porte
+• **la ventana / una ventana** → la fenêtre / une fenêtre
+• **la mesa / una mesa** → la table / une table
+• **la silla / una silla** → la chaise / une chaise
+• **la cama / una cama** → le lit / un lit
+• **la llave / una llave** → la clé / une clé
+• **la bolsa / una bolsa** → le sac / un sac
+• **la botella / una botella** → la bouteille / une bouteille
+• **el vaso / un vaso** → le verre / un verre
+• **el plato / un plato** → l'assiette / une assiette
+• **el cuchillo / un cuchillo** → le couteau / un couteau
+• **el tenedor / un tenedor** → la fourchette / une fourchette
+• **la cuchara / una cuchara** → la cuillère / une cuillère
+• **el teléfono / un teléfono** → le téléphone / un téléphone
+• **el ordenador / un ordenador** → l'ordinateur / un ordinateur
+• **el dinero** → l'argent
+
+🌍 **Vie quotidienne**
+
+• **la escuela / una escuela** → l'école / une école
+• **el trabajo / un trabajo** → le travail / un travail
+• **la tienda / una tienda** → le magasin / un magasin
+• **el mercado / un mercado** → le marché / un marché
+• **el hospital / un hospital** → l'hôpital / un hôpital
+• **el banco / un banco** → la banque / une banque
+• **la calle / una calle** → la rue / une rue
+• **la ciudad / una ciudad** → la ville / une ville
+• **el país / un país** → le pays / un pays
+• **el aeropuerto / un aeropuerto** → l'aéroport / un aéroport
+• **la estación / una estación** → la gare / une gare
+• **el coche / un coche** → la voiture / une voiture
+• **el autobús / un autobús** → le bus / un bus
+• **el tren / un tren** → le train / un train
+• **la bicicleta / una bicicleta** → le vélo / un vélo
+
+👤 **Personnes et identité**
+
+• **la persona / una persona** → la personne / une personne
+• **el hombre / un hombre** → l'homme / un homme
+• **la mujer / una mujer** → la femme / une femme
+• **el niño / un niño** → le garçon / un garçon
+• **la niña / una niña** → la fille / une fille
+• **el bebé / un bebé** → le bébé / un bébé
+• **el adulto / un adulto** → l'adulte / un adulte
+• **el anciano / un anciano** → la personne âgée / une personne âgée
+• **el amigo / un amigo** → l'ami / un ami
+• **la amiga / una amiga** → l'amie / une amie
+• **el vecino / un vecino** → le voisin / un voisin
+• **la vecina / una vecina** → la voisine / une voisine
+• **el profesor / un profesor** → le professeur / un professeur
+• **la profesora / una profesora** → la professeure / une professeure
+• **el estudiante / un estudiante** → l'étudiant / un étudiant
+• **el doctor / un doctor** → le médecin / un médecin
+• **el cliente / un cliente** → le client / un client
+• **el jefe / un jefe** → le patron / un patron
+• **el empleado / un empleado** → l'employé / un employé
+
+👨‍👩‍👧‍👦 **Famille**
+
+• **la familia / una familia** → la famille / une famille
+• **el padre / un padre** → le père / un père
+• **la madre / una madre** → la mère / une mère
+• **el hermano / un hermano** → le frère / un frère
+• **la hermana / una hermana** → la sœur / une sœur
+• **el hijo / un hijo** → le fils / un fils
+• **la hija / una hija** → la fille / une fille
+• **el abuelo / un abuelo** → le grand-père / un grand-père
+• **la abuela / una abuela** → la grand-mère / une grand-mère
+• **el tío / un tío** → l'oncle / un oncle
+• **la tía / una tía** → la tante / une tante
+• **el primo / un primo** → le cousin / un cousin
+• **la prima / una prima** → la cousine / une cousine
+
+🎂 **Âge et temps**
+
+• **la edad** → l'âge
+• **el año / un año** → l'année / une année
+• **el mes / un mes** → le mois / un mois
+• **la semana / una semana** → la semaine / une semaine
+• **el día / un día** → le jour / un jour
+• **la hora / una hora** → l'heure / une heure
+• **el minuto / un minuto** → la minute / une minute
+• **el segundo / un segundo** → la seconde / une seconde
+• **el cumpleaños / un cumpleaños** → l'anniversaire / un anniversaire
+• **la fecha / una fecha** → la date / une date
+
+📅 **Repères temporels**
+
+• **hoy** → aujourd'hui
+• **ayer** → hier
+• **anteayer** → avant-hier
+• **mañana** → demain
+• **pasado mañana** → après-demain
+• **ahora** → maintenant
+• **antes** → avant
+• **después** → après
+• **temprano** → tôt
+• **tarde** → tard
+• **siempre** → toujours
+• **nunca** → jamais
+
+🌦️ **Météo et saisons**
+
+• **el tiempo** → le temps (météo)
+• **el sol** → le soleil
+• **la lluvia** → la pluie
+• **la nieve** → la neige
+• **el viento** → le vent
+• **la nube** → le nuage
+• **la tormenta** → l'orage
+• **la niebla** → le brouillard
+• **el calor** → la chaleur
+• **el frío** → le froid
+• **la primavera** → le printemps
+• **el verano** → l'été
+• **el otoño** → l'automne
+• **el invierno** → l'hiver
+
+🧍 **Corps humain**
+
+• **la cabeza / una cabeza** → la tête / une tête
+• **la cara / una cara** → le visage / un visage
+• **el ojo / un ojo** → l'œil / un œil
+• **la oreja / una oreja** → l'oreille / une oreille
+• **la nariz / una nariz** → le nez / un nez
+• **la boca / una boca** → la bouche / une bouche
+• **la mano / una mano** → la main / une main
+• **el brazo / un brazo** → le bras / un bras
+• **la pierna / una pierna** → la jambe / une jambe
+• **el pie / un pie** → le pied / un pied
+• **el corazón / un corazón** → le cœur / un cœur
+
+🔢 **Annexe — Les nombres en espagnol**
+
+• **0** → Cero → Zéro
+• **1** → Uno → Un
+• **2** → Dos → Deux
+• **3** → Tres → Trois
+• **4** → Cuatro → Quatre
+• **5** → Cinco → Cinq
+• **6** → Seis → Six
+• **7** → Siete → Sept
+• **8** → Ocho → Huit
+• **9** → Nueve → Neuf
+• **10** → Diez → Dix
+
+• **11** → Once → Onze
+• **12** → Doce → Douze
+• **13** → Trece → Treize
+• **14** → Catorce → Quatorze
+• **15** → Quince → Quinze
+• **16** → Dieciséis → Seize
+• **17** → Diecisiete → Dix-sept
+• **18** → Dieciocho → Dix-huit
+• **19** → Diecinueve → Dix-neuf
+
+• **20** → Veinte → Vingt
+• **21** → Veintiuno → Vingt-et-un
+• **22** → Veintidós → Vingt-deux
+• **23** → Veintitrés → Vingt-trois
+• **24** → Veinticuatro → Vingt-quatre
+• **25** → Veinticinco → Vingt-cinq
+• **26** → Veintiséis → Vingt-six
+• **27** → Veintisiete → Vingt-sept
+• **28** → Veintiocho → Vingt-huit
+• **29** → Veintinueve → Vingt-neuf
+
+• **30** → Treinta → Trente
+• **40** → Cuarenta → Quarante
+• **50** → Cincuenta → Cinquante
+• **60** → Sesenta → Soixante
+• **70** → Setenta → Soixante-dix
+• **80** → Ochenta → Quatre-vingts
+• **90** → Noventa → Quatre-vingt-dix
+
+• **100** → Cien → Cent
+• **101** → Ciento uno → Cent un
+• **200** → Doscientos → Deux cents
+• **300** → Trescientos → Trois cents
+• **500** → Quinientos → Cinq cents
+• **1000** → Mil → Mille
+• **1 000 000** → Un millón → Un million
+
+💰 **Nombres très utilisés au quotidien**
+
+• **1,5** → Uno y medio → Un et demi
+• **2,5** → Dos y medio → Deux et demi
+• **10 %** → Diez por ciento → Dix pour cent
+• **100 %** → Cien por ciento → Cent pour cent
+
+🧮 **Pour former les nombres**
+
+• **31** → Treinta y uno
+• **42** → Cuarenta y dos
+• **58** → Cincuenta y ocho
+• **76** → Setenta y seis
+• **99** → Noventa y nueve
+
+👉 Règle : à partir de **31**, on utilise généralement :
+
+**[dizaine] + y + [unité]**
+
+Exemple :
+
+* **34** → *Treinta y cuatro*
+* **67** → *Sesenta y siete*
+* **92** → *Noventa y dos*
