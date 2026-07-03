@@ -56,15 +56,6 @@ export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
           🚀 {isLesson1 ? 'Commencer le quiz' : '¡Empezar!'}
         </button>
 
-        {!isPrince && (
-          <button
-            onClick={onTest}
-            className="mt-4 text-xs text-gray-400 hover:text-purple-500 underline transition-colors cursor-pointer"
-          >
-            🔍 Test Score (94%)
-          </button>
-        )}
-
         <button
           onClick={onBack}
           className="mt-3 text-gray-400 hover:text-gray-600 text-sm transition-colors cursor-pointer"
