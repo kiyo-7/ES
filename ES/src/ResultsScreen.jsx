@@ -1,3 +1,5 @@
+import otterVideo from './assets/otter-otter-aty.mp4'
+
 export default function ResultsScreen({ score, totalQuestions, answers, user, onRestart, onBack }) {
   const isPrince = user === 'prince'
   const pct = Math.round((score / totalQuestions) * 100)
@@ -13,7 +15,6 @@ export default function ResultsScreen({ score, totalQuestions, answers, user, on
     { emoji: '📚', text: 'Time to study!' }
 
   const circumference = 2 * Math.PI * 50
-
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center p-6 ${
       isPrince
@@ -25,6 +26,16 @@ export default function ResultsScreen({ score, totalQuestions, answers, user, on
         <h1 className={`text-3xl font-bold mb-1 ${isPrince ? 'text-red-800' : 'text-purple-800'}`}>
           {grade.text}
         </h1>
+        {!isPrince && (
+          <video
+            src={otterVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="rounded-2xl mb-4 w-full max-w-xs mx-auto shadow-md"
+          />
+        )}
         <p className="text-gray-400 mb-8 text-sm">Quiz completed</p>
 
         <div className="relative w-36 h-36 mx-auto mb-8">
