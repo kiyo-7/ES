@@ -40,8 +40,8 @@ export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
               </>
             ) : isLesson3 ? (
               <>
-                <li>• 51 questions on 12 essential verbs</li>
-                <li>• Type the French translation (accent-tolerant)</li>
+                <li>• 108 questions — 12 verbs × 3 tenses × 3 persons</li>
+                <li>• Type the conjugated form (accent-tolerant)</li>
                 <li>• Use 💡 Hint to reveal the next 2 letters</li>
                 <li>• 1 point per correct answer</li>
                 <li>• ⏱ Chronometer runs from start to end</li>

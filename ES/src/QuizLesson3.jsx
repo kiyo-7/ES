@@ -19,9 +19,10 @@ function normalize(str) {
   return str.toLowerCase().replace(/[éèêëàâäùûüôöîïç]/g, c => accentMap[c] || c)
 }
 
-const categoryLabels = {
-  infinitive: '📖 Infinitif',
-  conjugation: '🔄 Conjugaison',
+const tenseLabels = {
+  present: '🟢 Présent',
+  past: '🔵 Passé (pretérito)',
+  future: '🟠 Futur',
 }
 
 export default function QuizLesson3({ question, totalQuestions, currentIndex, score, elapsed, onAnswer, onNext, user }) {
@@ -32,8 +33,7 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
   const inputRef = useRef(null)
 
   const isPrince = user === 'prince'
-  const isInfinitive = question.category === 'infinitive'
-  const answer = question.french
+  const answer = question.answer
 
   function applyHint() {
     if (answered) return
@@ -58,9 +58,7 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
     const ok = normalize(input.trim()) === normalize(answer)
     setCorrect(ok)
     setAnswered(true)
-    if (ok) {
-      setInput(answer)
-    }
+    if (ok) setInput(answer)
     onAnswer(question.id, input.trim(), ok, hintsUsed > 0 ? 'hint' : 'direct')
   }
 
@@ -97,32 +95,26 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
       </div>
 
       <div className="w-full max-w-lg bg-white rounded-3xl shadow-xl p-6 sm:p-8">
-        <div className="text-center mb-2">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-500 uppercase tracking-wide">
-            {categoryLabels[question.category] || question.category}
+        <div className="flex justify-center gap-2 mb-4">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 uppercase tracking-wide">
+            🔄 Conjugaison
+          </span>
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">
+            {tenseLabels[question.tense] || question.tense}
           </span>
         </div>
 
-        {isInfinitive ? (
-          <>
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 my-4 leading-tight">
-              {question.spanish}
-            </h2>
-            <p className="text-center text-gray-400 text-sm mb-5">Tape la traduction française</p>
-          </>
-        ) : (
-          <>
-            <div className="text-center mb-1">
-              <span className="inline-block px-3 py-1 rounded-lg text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-                {question.pronoun}
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 my-4 leading-tight">
-              {question.spanish}
-            </h2>
-            <p className="text-center text-gray-400 text-sm mb-5">Conjugue en français</p>
-          </>
-        )}
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 my-2 leading-tight">
+          {question.verb}
+        </h2>
+
+        <div className="text-center mb-5">
+          <span className="inline-block px-4 py-1.5 rounded-lg text-base font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+            {question.pronoun}
+          </span>
+        </div>
+
+        <p className="text-center text-gray-400 text-sm mb-4">Tape la forme conjuguée</p>
 
         <div className="mb-4">
           <input
@@ -130,9 +122,9 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
             type="text"
             value={input}
             onChange={e => { if (!answered) setInput(e.target.value) }}
-            placeholder={isInfinitive ? 'ex: être' : 'ex: je suis'}
+            placeholder="ex: soy"
             autoFocus
-            className={`w-full p-4 rounded-2xl border-2 text-lg font-medium outline-none transition-all duration-200 ${
+            className={`w-full p-4 rounded-2xl border-2 text-lg font-medium outline-none transition-all duration-200 text-center ${
               answered
                 ? correct
                   ? 'border-green-500 bg-green-50 text-green-800'
@@ -154,7 +146,7 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
                   : 'bg-gray-100 text-gray-300 cursor-not-allowed'
               }`}
             >
-              💡 Hint ({hintsUsed + 1})
+              💡 Hint ({hintsUsed + 1}/2)
             </button>
             <button
               onClick={handleConfirm}
@@ -181,7 +173,7 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
             }`}>
               {correct
                 ? `✅ ¡Correcto!${hintsUsed > 0 ? ` (${hintsUsed} indice${hintsUsed > 1 ? 's' : ''})` : ''}`
-                : `❌ La réponse correcte est : ${answer}`
+                : `❌ ${question.verb} (${question.pronoun}, ${question.tense}) → ${answer}`
               }
             </div>
 
