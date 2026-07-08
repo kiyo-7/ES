@@ -45,6 +45,22 @@ export default function LessonSelect({ user, onSelect }) {
             <span className="text-xs text-gray-400">57 questions — images + gender (el/la)</span>
           </p>
         </button>
+
+        <button
+          onClick={() => onSelect('lesson3')}
+          className={`flex-1 bg-white rounded-3xl p-7 shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border-2 cursor-pointer text-left ${
+            isPrince ? 'border-red-200 hover:border-red-400' : 'border-purple-200 hover:border-purple-400'
+          }`}
+        >
+          <div className="text-4xl mb-3">⚡</div>
+          <h3 className={`text-xl font-bold mb-1 ${isPrince ? 'text-red-800' : 'text-purple-800'}`}>
+            Lesson 3
+          </h3>
+          <p className="text-gray-500 text-sm leading-relaxed">
+            Essential Verbs<br />
+            <span className="text-xs text-gray-400">51 questions — type the answer + hints</span>
+          </p>
+        </button>
       </div>
     </div>
   )

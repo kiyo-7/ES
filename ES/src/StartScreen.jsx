@@ -1,6 +1,7 @@
 export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
   const isPrince = user === 'prince'
   const isLesson1 = lesson === 'lesson1'
+  const isLesson3 = lesson === 'lesson3'
 
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center p-6 ${
@@ -9,17 +10,21 @@ export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
         : 'bg-linear-to-br from-purple-50 via-fuchsia-50 to-cyan-100'
     }`}>
       <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 max-w-md w-full text-center">
-        <div className="text-6xl mb-4">{isLesson1 ? '📖' : '🎨'}</div>
+        <div className="text-6xl mb-4">{isLesson1 ? '📖' : isLesson3 ? '⚡' : '🎨'}</div>
         <h1 className={`text-3xl font-bold mb-3 ${isPrince ? 'text-red-800' : 'text-purple-800'}`}>
           {isLesson1
             ? `¿Listo, ${isPrince ? 'Príncipe' : 'Protagonista'}?`
-            : `¿Preparado, ${isPrince ? 'Príncipe' : 'Protagonista'}?`
+            : isLesson3
+              ? `¿Preparado, ${isPrince ? 'Príncipe' : 'Protagonista'}?`
+              : `¿Preparado, ${isPrince ? 'Príncipe' : 'Protagonista'}?`
           }
         </h1>
         <p className="text-gray-500 mb-6">
           {isLesson1
             ? 'Test your Spanish greetings & pronouns!'
-            : 'Build your Spanish vocabulary!'
+            : isLesson3
+              ? 'Master Spanish verbs!'
+              : 'Build your Spanish vocabulary!'
           }
         </p>
 
@@ -32,6 +37,14 @@ export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
                 <li>• Pick the correct French translation (5 choices)</li>
                 <li>• Identify if the greeting is formal or informal</li>
                 <li>• 1 point per correct translation</li>
+              </>
+            ) : isLesson3 ? (
+              <>
+                <li>• 51 questions on 12 essential verbs</li>
+                <li>• Type the French translation (accent-tolerant)</li>
+                <li>• Use 💡 Hint to reveal the next 2 letters</li>
+                <li>• 1 point per correct answer</li>
+                <li>• ⏱ Chronometer runs from start to end</li>
               </>
             ) : (
               <>
@@ -53,7 +66,7 @@ export default function StartScreen({ user, lesson, onStart, onTest, onBack }) {
               : 'bg-purple-700 hover:bg-purple-600'
           }`}
         >
-          🚀 {isLesson1 ? 'Commencer le quiz' : '¡Empezar!'}
+          🚀 {isLesson1 ? 'Commencer le quiz' : isLesson3 ? '¡Empezar!' : '¡Empezar!'}
         </button>
 
         <button

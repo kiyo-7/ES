@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import questions from './quizData'
 import lesson2Questions from './lesson2Data'
+import lesson3Questions from './lesson3Data'
 import UserSelect from './UserSelect'
 import LessonSelect from './LessonSelect'
 import StartScreen from './StartScreen'
 import QuizQuestion from './QuizQuestion'
 import QuizLesson2 from './QuizLesson2'
+import QuizLesson3 from './QuizLesson3'
 import ResultsScreen from './ResultsScreen'
 
 function shuffle(arr) {
@@ -29,7 +31,7 @@ export default function App() {
   const [elapsed, setElapsed] = useState(0)
 
   useEffect(() => {
-    if (screen !== 'quiz' && screen !== 'quiz-lesson2') return
+    if (screen !== 'quiz' && screen !== 'quiz-lesson2' && screen !== 'quiz-lesson3') return
     if (!startTime) return
     const id = setInterval(() => {
       setElapsed(Math.floor((Date.now() - startTime) / 1000))
@@ -50,6 +52,8 @@ export default function App() {
   function startGame() {
     if (lesson === 'lesson1') {
       setShuffled(shuffle(questions))
+    } else if (lesson === 'lesson3') {
+      setShuffled(shuffle(lesson3Questions))
     } else {
       const byCategory = {}
       lesson2Questions.forEach(q => {
@@ -68,7 +72,9 @@ export default function App() {
     setAnswers([])
     setStartTime(Date.now())
     setElapsed(0)
-    setScreen(lesson === 'lesson1' ? 'quiz' : 'quiz-lesson2')
+    if (lesson === 'lesson1') setScreen('quiz')
+    else if (lesson === 'lesson3') setScreen('quiz-lesson3')
+    else setScreen('quiz-lesson2')
   }
 
   function testScore() {
@@ -146,6 +152,18 @@ export default function App() {
       )}
       {screen === 'quiz-lesson2' && current && (
         <QuizLesson2
+          question={current}
+          totalQuestions={total}
+          currentIndex={currentIndex}
+          score={score}
+          elapsed={elapsed}
+          onAnswer={handleAnswer}
+          onNext={nextQuestion}
+          user={user}
+        />
+      )}
+      {screen === 'quiz-lesson3' && current && (
+        <QuizLesson3
           question={current}
           totalQuestions={total}
           currentIndex={currentIndex}

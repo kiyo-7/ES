@@ -1,0 +1,62 @@
+const lesson3Questions = [
+  // === Infinitive — Spanish infinitive → French meaning ===
+  { id: 1, category: "infinitive", spanish: "Ser", french: "être" },
+  { id: 2, category: "infinitive", spanish: "Estar", french: "être (état / lieu)" },
+  { id: 3, category: "infinitive", spanish: "Tener", french: "avoir" },
+  { id: 4, category: "infinitive", spanish: "Haber", french: "avoir (auxiliaire)" },
+  { id: 5, category: "infinitive", spanish: "Hacer", french: "faire" },
+  { id: 6, category: "infinitive", spanish: "Poder", french: "pouvoir" },
+  { id: 7, category: "infinitive", spanish: "Ir", french: "aller" },
+  { id: 8, category: "infinitive", spanish: "Querer", french: "vouloir" },
+  { id: 9, category: "infinitive", spanish: "Decir", french: "dire" },
+  { id: 10, category: "infinitive", spanish: "Saber", french: "savoir" },
+  { id: 11, category: "infinitive", spanish: "Ver", french: "voir" },
+  { id: 12, category: "infinitive", spanish: "Olvidar", french: "oublier" },
+
+  // === Present conjugation → type the French translation ===
+  { id: 13, category: "conjugation", pronoun: "yo", spanish: "soy", french: "je suis" },
+  { id: 14, category: "conjugation", pronoun: "tu", spanish: "eres", french: "tu es" },
+  { id: 15, category: "conjugation", pronoun: "él/ella/usted", spanish: "es", french: "il/elle/on est" },
+  { id: 16, category: "conjugation", pronoun: "yo", spanish: "estoy", french: "je suis" },
+  { id: 17, category: "conjugation", pronoun: "yo", spanish: "tengo", french: "j'ai" },
+  { id: 18, category: "conjugation", pronoun: "yo", spanish: "he", french: "j'ai" },
+  { id: 19, category: "conjugation", pronoun: "yo", spanish: "hago", french: "je fais" },
+  { id: 20, category: "conjugation", pronoun: "yo", spanish: "puedo", french: "je peux" },
+  { id: 21, category: "conjugation", pronoun: "yo", spanish: "voy", french: "je vais" },
+  { id: 22, category: "conjugation", pronoun: "yo", spanish: "quiero", french: "je veux" },
+  { id: 23, category: "conjugation", pronoun: "yo", spanish: "digo", french: "je dis" },
+  { id: 24, category: "conjugation", pronoun: "yo", spanish: "sé", french: "je sais" },
+  { id: 25, category: "conjugation", pronoun: "yo", spanish: "veo", french: "je vois" },
+  { id: 26, category: "conjugation", pronoun: "yo", spanish: "olvido", french: "j'oublie" },
+
+  // === Past (pretérito) conjugation → type the French translation ===
+  { id: 27, category: "conjugation", pronoun: "yo", spanish: "fui", french: "je fus" },
+  { id: 28, category: "conjugation", pronoun: "tu", spanish: "fuiste", french: "tu fus" },
+  { id: 29, category: "conjugation", pronoun: "yo", spanish: "estuve", french: "je fus" },
+  { id: 30, category: "conjugation", pronoun: "yo", spanish: "tuve", french: "j'eus" },
+  { id: 31, category: "conjugation", pronoun: "yo", spanish: "hube", french: "j'eus" },
+  { id: 32, category: "conjugation", pronoun: "yo", spanish: "hice", french: "je fis" },
+  { id: 33, category: "conjugation", pronoun: "yo", spanish: "pude", french: "je pus" },
+  { id: 34, category: "conjugation", pronoun: "yo", spanish: "quise", french: "je voulus" },
+  { id: 35, category: "conjugation", pronoun: "yo", spanish: "dije", french: "je dis" },
+  { id: 36, category: "conjugation", pronoun: "yo", spanish: "supe", french: "je sus" },
+  { id: 37, category: "conjugation", pronoun: "yo", spanish: "vi", french: "je vis" },
+  { id: 38, category: "conjugation", pronoun: "yo", spanish: "olvidé", french: "j'oubliai" },
+
+  // === Future conjugation → type the French translation ===
+  { id: 39, category: "conjugation", pronoun: "yo", spanish: "seré", french: "je serai" },
+  { id: 40, category: "conjugation", pronoun: "tu", spanish: "serás", french: "tu seras" },
+  { id: 41, category: "conjugation", pronoun: "yo", spanish: "estaré", french: "je serai" },
+  { id: 42, category: "conjugation", pronoun: "yo", spanish: "tendré", french: "j'aurai" },
+  { id: 43, category: "conjugation", pronoun: "yo", spanish: "habré", french: "j'aurai" },
+  { id: 44, category: "conjugation", pronoun: "yo", spanish: "haré", french: "je ferai" },
+  { id: 45, category: "conjugation", pronoun: "yo", spanish: "podré", french: "je pourrai" },
+  { id: 46, category: "conjugation", pronoun: "yo", spanish: "iré", french: "j'irai" },
+  { id: 47, category: "conjugation", pronoun: "yo", spanish: "querré", french: "je voudrai" },
+  { id: 48, category: "conjugation", pronoun: "yo", spanish: "diré", french: "je dirai" },
+  { id: 49, category: "conjugation", pronoun: "yo", spanish: "sabré", french: "je saurai" },
+  { id: 50, category: "conjugation", pronoun: "yo", spanish: "veré", french: "je verrai" },
+  { id: 51, category: "conjugation", pronoun: "yo", spanish: "olvidaré", french: "j'oublierai" },
+]
+
+export default lesson3Questions
