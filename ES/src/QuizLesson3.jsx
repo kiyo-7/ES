@@ -147,7 +147,6 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
                   type="text"
                   value={inputs[p]}
                   onChange={e => setInput(p, e.target.value)}
-                  placeholder={ans}
                   className={inputClass(p)}
                   readOnly={answered}
                   autoFocus={p === 'yo' && !answered}
