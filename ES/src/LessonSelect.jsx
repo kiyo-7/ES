@@ -58,7 +58,7 @@ export default function LessonSelect({ user, onSelect }) {
           </h3>
           <p className="text-gray-500 text-sm leading-relaxed">
             Essential Verbs<br />
-            <span className="text-xs text-gray-400">108 questions — 12 verbs × 3 tenses × 3 persons</span>
+            <span className="text-xs text-gray-400">36 questions — conjugate 3 persons per verb × tense</span>
           </p>
         </button>
       </div>

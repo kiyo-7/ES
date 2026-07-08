@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 function formatTime(seconds) {
   const m = Math.floor(seconds / 60)
@@ -7,16 +7,17 @@ function formatTime(seconds) {
 }
 
 const accentMap = {
+  'á': 'a', 'à': 'a', 'â': 'a', 'ä': 'a',
   'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
-  'à': 'a', 'â': 'a', 'ä': 'a',
-  'ù': 'u', 'û': 'u', 'ü': 'u',
-  'ô': 'o', 'ö': 'o',
-  'î': 'i', 'ï': 'i',
+  'í': 'i', 'î': 'i', 'ï': 'i',
+  'ó': 'o', 'ô': 'o', 'ö': 'o',
+  'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u',
+  'ñ': 'n',
   'ç': 'c',
 }
 
 function normalize(str) {
-  return str.toLowerCase().replace(/[éèêëàâäùûüôöîïç]/g, c => accentMap[c] || c)
+  return str.toLowerCase().replace(/[áàâäéèêëíîïóôöúùûüñç]/g, c => accentMap[c] || c)
 }
 
 const tenseLabels = {
@@ -25,52 +26,76 @@ const tenseLabels = {
   future: '🟠 Futur',
 }
 
+const pronouns = ['yo', 'tú', 'él/ella/usted']
+
 export default function QuizLesson3({ question, totalQuestions, currentIndex, score, elapsed, onAnswer, onNext, user }) {
-  const [input, setInput] = useState('')
-  const [hintsUsed, setHintsUsed] = useState(0)
+  const [inputs, setInputs] = useState({ yo: '', tú: '', 'él/ella/usted': '' })
+  const [hintsUsed, setHintsUsed] = useState({ yo: 0, tú: 0, 'él/ella/usted': 0 })
   const [answered, setAnswered] = useState(false)
-  const [correct, setCorrect] = useState(false)
-  const inputRef = useRef(null)
+  const [results, setResults] = useState(null)
 
   const isPrince = user === 'prince'
-  const answer = question.answer
+  const answers = question.answers
 
-  function applyHint() {
+  function applyHint(pronoun) {
     if (answered) return
-    const typed = input
+    const ans = answers[pronoun]
+    const val = inputs[pronoun]
+    if (hintsUsed[pronoun] >= 2) return
+
     let matchLen = 0
-    for (let i = 0; i < answer.length; i++) {
-      if (i < typed.length && normalize(typed[i]) === normalize(answer[i])) {
+    for (let i = 0; i < ans.length; i++) {
+      if (i < val.length && normalize(val[i]) === normalize(ans[i])) {
         matchLen++
       } else {
         break
       }
     }
-    const remaining = answer.slice(matchLen)
+    const remaining = ans.slice(matchLen)
     if (remaining.length === 0) return
     const chunk = remaining.slice(0, 2)
-    setInput(typed + chunk)
-    setHintsUsed(prev => prev + 1)
+
+    setInputs(prev => ({ ...prev, [pronoun]: val + chunk }))
+    setHintsUsed(prev => ({ ...prev, [pronoun]: prev[pronoun] + 1 }))
+  }
+
+  function setInput(pronoun, value) {
+    if (answered) return
+    setInputs(prev => ({ ...prev, [pronoun]: value }))
   }
 
   function handleConfirm() {
     if (answered) return
-    const ok = normalize(input.trim()) === normalize(answer)
-    setCorrect(ok)
+    const res = {}
+    pronouns.forEach(p => {
+      const ok = normalize(inputs[p].trim()) === normalize(answers[p])
+      res[p] = ok
+      onAnswer(question.id, inputs[p].trim(), ok, hintsUsed[p] > 0 ? 'hint' : 'direct')
+    })
+    setResults(res)
     setAnswered(true)
-    if (ok) setInput(answer)
-    onAnswer(question.id, input.trim(), ok, hintsUsed > 0 ? 'hint' : 'direct')
+    const filled = {}
+    pronouns.forEach(p => { filled[p] = res[p] ? answers[p] : inputs[p] })
+    setInputs(filled)
   }
 
   function handleNext() {
-    setInput('')
-    setHintsUsed(0)
+    setInputs({ yo: '', tú: '', 'él/ella/usted': '' })
+    setHintsUsed({ yo: 0, tú: 0, 'él/ella/usted': 0 })
     setAnswered(false)
-    setCorrect(false)
+    setResults(null)
     onNext()
   }
 
-  const hintAvailable = !answered && input.length < answer.length && hintsUsed < 2
+  const allFilled = pronouns.every(p => inputs[p].trim().length > 0)
+
+  function inputClass(pronoun) {
+    if (!answered) return 'flex-1 p-3 rounded-xl border-2 text-base font-medium outline-none transition-all duration-200 bg-gray-50 text-gray-800 border-gray-200 focus:border-purple-400 focus:bg-white'
+    const ok = results[pronoun]
+    return `flex-1 p-3 rounded-xl border-2 text-base font-medium outline-none transition-all duration-200 ${
+      ok ? 'border-green-500 bg-green-50 text-green-800' : 'border-red-500 bg-red-50 text-red-800'
+    }`
+  }
 
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 ${
@@ -104,77 +129,88 @@ export default function QuizLesson3({ question, totalQuestions, currentIndex, sc
           </span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 my-2 leading-tight">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6 leading-tight">
           {question.verb}
         </h2>
 
-        <div className="text-center mb-5">
-          <span className="inline-block px-4 py-1.5 rounded-lg text-base font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-            {question.pronoun}
-          </span>
-        </div>
+        <div className="space-y-3">
+          {pronouns.map(p => {
+            const ans = answers[p]
+            const canHint = !answered && hintsUsed[p] < 2 && inputs[p].length < ans.length
 
-        <p className="text-center text-gray-400 text-sm mb-4">Tape la forme conjuguée</p>
-
-        <div className="mb-4">
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={e => { if (!answered) setInput(e.target.value) }}
-            placeholder="ex: soy"
-            autoFocus
-            className={`w-full p-4 rounded-2xl border-2 text-lg font-medium outline-none transition-all duration-200 text-center ${
-              answered
-                ? correct
-                  ? 'border-green-500 bg-green-50 text-green-800'
-                  : 'border-red-500 bg-red-50 text-red-800'
-                : 'border-gray-200 bg-gray-50 text-gray-800 focus:border-purple-400 focus:bg-white'
-            }`}
-            readOnly={answered}
-          />
+            return (
+              <div key={p} className="flex items-center gap-2">
+                <span className="w-28 shrink-0 text-sm font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 text-center">
+                  {p}
+                </span>
+                <input
+                  type="text"
+                  value={inputs[p]}
+                  onChange={e => setInput(p, e.target.value)}
+                  placeholder={ans}
+                  className={inputClass(p)}
+                  readOnly={answered}
+                  autoFocus={p === 'yo' && !answered}
+                />
+                {!answered && (
+                  <button
+                    onClick={() => applyHint(p)}
+                    disabled={!canHint}
+                    className={`shrink-0 px-3 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+                      canHint
+                        ? 'bg-amber-100 text-amber-700 hover:bg-amber-200 active:bg-amber-300'
+                        : 'bg-gray-100 text-gray-300 cursor-not-allowed'
+                    }`}
+                  >
+                    💡
+                  </button>
+                )}
+                {answered && (
+                  <span className="shrink-0 w-10 text-center text-lg">
+                    {results[p] ? '✅' : '❌'}
+                  </span>
+                )}
+              </div>
+            )
+          })}
         </div>
 
         {!answered && (
-          <div className="flex gap-3">
-            <button
-              onClick={applyHint}
-              disabled={!hintAvailable}
-              className={`flex-1 py-3.5 rounded-2xl font-bold text-lg transition-all duration-200 cursor-pointer ${
-                hintAvailable
-                  ? 'bg-amber-100 text-amber-700 hover:bg-amber-200 active:bg-amber-300 shadow'
-                  : 'bg-gray-100 text-gray-300 cursor-not-allowed'
-              }`}
-            >
-              💡 Hint ({hintsUsed + 1}/2)
-            </button>
-            <button
-              onClick={handleConfirm}
-              disabled={input.trim().length === 0}
-              className={`flex-1 py-3.5 rounded-2xl font-bold text-lg transition-all duration-200 cursor-pointer ${
-                input.trim().length > 0
-                  ? isPrince
-                    ? 'bg-red-700 text-white hover:bg-red-600 active:bg-red-800 shadow-lg'
-                    : 'bg-purple-700 text-white hover:bg-purple-600 active:bg-purple-800 shadow-lg'
-                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              }`}
-            >
-              ✓ Vérifier
-            </button>
-          </div>
+          <button
+            onClick={handleConfirm}
+            disabled={!allFilled}
+            className={`w-full mt-6 py-3.5 rounded-2xl font-bold text-lg transition-all duration-200 cursor-pointer ${
+              allFilled
+                ? isPrince
+                  ? 'bg-red-700 text-white hover:bg-red-600 active:bg-red-800 shadow-lg'
+                  : 'bg-purple-700 text-white hover:bg-purple-600 active:bg-purple-800 shadow-lg'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+            }`}
+          >
+            ✓ Vérifier
+          </button>
         )}
 
         {answered && (
-          <div className="mt-5 space-y-3">
-            <div className={`p-4 rounded-2xl text-center font-semibold ${
-              correct
-                ? 'bg-green-50 text-green-700 border border-green-300'
-                : 'bg-red-50 text-red-700 border border-red-300'
-            }`}>
-              {correct
-                ? `✅ ¡Correcto!${hintsUsed > 0 ? ` (${hintsUsed} indice${hintsUsed > 1 ? 's' : ''})` : ''}`
-                : `❌ ${question.verb} (${question.pronoun}, ${question.tense}) → ${answer}`
-              }
+          <div className="mt-6 space-y-3">
+            <div className="p-4 rounded-2xl text-center font-semibold bg-gray-50 text-gray-700 border border-gray-200">
+              {pronouns.filter(p => results[p]).length} / 3 correctes
+              {pronouns.some(p => hintsUsed[p] > 0) && (
+                <span className="text-gray-400 text-sm ml-2">
+                  (avec indices)
+                </span>
+              )}
+            </div>
+
+            <div className="space-y-1.5 text-sm text-center">
+              {pronouns.map(p => {
+                if (results[p]) return null
+                return (
+                  <div key={p} className="text-red-600">
+                    <span className="font-medium">{p}</span> → {answers[p]}
+                  </div>
+                )
+              })}
             </div>
 
             <button
